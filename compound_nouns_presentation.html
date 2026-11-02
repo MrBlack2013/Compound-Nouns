@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compound Nouns — English Grammar</title>
+<style>
+:root{--bg:#10172a;--panel:#202d48;--blue:#60d5ff;--yellow:#ffd166;--muted:#aab8d0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:var(--bg);color:#fff;overflow:hidden}
+.slide{display:none;height:100vh;padding:52px 8% 82px;overflow-y:auto;flex-direction:column;justify-content:center;animation:fade .3s ease}
+.slide.active{display:flex}
+h1{font-size:clamp(40px,6vw,72px);color:var(--blue);margin:12px 0 20px}
+h2{font-size:clamp(28px,4vw,45px);color:var(--blue);margin-bottom:20px}
+h3{font-size:22px;color:var(--yellow);margin-bottom:10px}
+p,li{font-size:clamp(17px,1.8vw,22px);line-height:1.55}
+ul{margin-left:28px}
+.eyebrow{color:var(--muted);letter-spacing:2px;font-size:14px}
+.lead{font-size:clamp(21px,2.5vw,30px);max-width:850px}
+.example{background:var(--panel);border-left:5px solid var(--blue);padding:16px 20px;border-radius:12px;margin:10px 0;font-size:20px;line-height:1.5}
+.hl{color:var(--yellow);font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+.card{background:var(--panel);border-radius:15px;padding:18px;text-align:center}
+.card .emoji{font-size:42px;margin-bottom:8px}
+.card p{font-size:17px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.controls{position:fixed;right:22px;bottom:18px;display:flex;gap:9px;z-index:20}
+button{border:0;border-radius:9px;padding:12px 18px;background:var(--blue);color:#10172a;font-weight:bold;font-size:15px;cursor:pointer}
+button:hover{background:var(--yellow)}
+button:disabled{opacity:.4;cursor:not-allowed}
+#counter{position:fixed;left:22px;bottom:25px;color:var(--muted);z-index:20}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* matching game */
+.game-wrap{background:#fff;color:#171717;border-radius:12px;padding:10px 8px 14px;width:100%;overflow:hidden}
+.game-status{display:flex;justify-content:space-between;gap:10px;padding:5px 8px 10px;font-size:15px;font-weight:bold}
+.picture-row,.slot-row{display:flex;gap:8px;overflow-x:auto;padding:5px 2px 12px;scrollbar-width:thin}
+.picture-card{flex:0 0 92px;width:92px;height:132px;border-radius:5px;padding:7px;color:white;text-align:center;box-shadow:0 3px 4px #0003}
+.picture-box{height:85px;background:#ffffffeb;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:51px}
+.picture-label{font-size:17px;font-weight:bold;margin-top:7px;text-transform:lowercase}
+.answer-slot{flex:0 0 92px;width:92px;height:78px;border:1px solid #999;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:bold;text-transform:lowercase;background:#fff}
+.answer-slot.over{background:#e0f2fe;border:2px dashed #168bd0}
+.answer-slot.correct{background:#d1fae5;border:2px solid #16a34a;color:#166534}
+.word-bank{display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:8px;padding:18px 4px 12px;min-height:70px}
+.word-piece{background:#fff;color:#171717;border:1px solid transparent;border-radius:5px;padding:7px 8px;font-size:clamp(17px,2vw,23px);cursor:grab;user-select:none;touch-action:manipulation}
+.word-piece:hover,.word-piece.selected{background:#dbeafe;border-color:#168bd0}
+.word-piece.used{opacity:.2;pointer-events:none}
+.game-feedback{text-align:center;min-height:28px;padding:5px;font-size:17px;font-weight:bold}
+.game-actions{text-align:center;padding:5px}
+.game-actions button{background:#168bd0;color:white}
+@media(max-width:700px){.slide{padding:28px 5% 80px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.picture-card,.answer-slot{flex-basis:78px;width:78px}.picture-label{font-size:15px}.controls{right:8px;bottom:8px}#counter{left:10px;bottom:17px}}
+</style>
+</head>
+<body>
+
+<section class="slide active">
+  <p class="eyebrow">ENGLISH GRAMMAR • VOCABULARY</p>
+  <h1>COMPOUND<br>NOUNS</h1>
+  <p class="lead">Two or more words join together to make one noun.</p>
+  <div class="example" style="margin-top:24px">🏠 <span class="hl">LIGHT</span> + <span class="hl">HOUSE</span> = LIGHTHOUSE</div>
+  <p>Look closely, learn the patterns, and play the matching game!</p>
+</section>
+
+<section class="slide">
+  <h2>What Is a Compound Noun?</h2>
+  <p>A <b class="hl">compound noun</b> is a noun made from two or more words. Together, the words name one person, place, thing, or idea.</p>
+  <div class="example">A <b>tooth</b> + a <b>brush</b> = a <b class="hl">toothbrush</b></div>
+  <div class="example">A <b>rain</b> + a <b>bow</b> = a <b class="hl">rainbow</b></div>
+  <p>The meaning of a compound noun is connected to its parts, but sometimes the whole word has a special meaning.</p>
+</section>
+
+<section class="slide">
+  <h2>Three Ways to Write Compound Nouns</h2>
+  <div class="grid">
+    <div class="card"><div class="emoji">⌨️</div><h3>Closed</h3><p>One word</p><p><b>keyboard</b></p></div>
+    <div class="card"><div class="emoji">🍦</div><h3>Open</h3><p>Two separate words</p><p><b>ice cream</b></p></div>
+    <div class="card"><div class="emoji">👨‍👩‍👧</div><h3>Hyphenated</h3><p>Joined by a hyphen</p><p><b>mother-in-law</b></p></div>
+  </div>
+  <div class="example">The spelling pattern can vary. Learn the usual spelling of each compound noun.</div>
+</section>
+
+<section class="slide">
+  <h2>1. Closed Compound Nouns</h2>
+  <p>These compound nouns are written as one word, without a space or hyphen.</p>
+  <div class="grid">
+    <div class="card"><div class="emoji">⌨️</div><h3>Keyboard</h3><p>key + board</p></div>
+    <div class="card"><div class="emoji">🧁</div><h3>Cupcake</h3><p>cup + cake</p></div>
+    <div class="card"><div class="emoji">🍉</div><h3>Watermelon</h3><p>water + melon</p></div>
+    <div class="card"><div class="emoji">🛹</div><h3>Skateboard</h3><p>skate + board</p></div>
+    <div class="card"><div class="emoji">☃️</div><h3>Snowman</h3><p>snow + man</p></div>
+    <div class="card"><div class="emoji">🧑‍🚒</div><h3>Firefighter</h3><p>fire + fighter</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>2. Open Compound Nouns</h2>
+  <p>These compound nouns are written as two separate words.</p>
+  <div class="grid">
+    <div class="card"><div class="emoji">🏠</div><h3>Living room</h3><p>living + room</p></div>
+    <div class="card"><div class="emoji">🚌</div><h3>School bus</h3><p>school + bus</p></div>
+    <div class="card"><div class="emoji">🪥</div><h3>Hair brush</h3><p>hair + brush</p></div>
+    <div class="card"><div class="emoji">🏊</div><h3>Swimming pool</h3><p>swimming + pool</p></div>
+    <div class="card"><div class="emoji">🛝</div><h3>Play area</h3><p>play + area</p></div>
+    <div class="card"><div class="emoji">🧺</div><h3>Laundry basket</h3><p>laundry + basket</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>3. Hyphenated Compound Nouns</h2>
+  <p>These compound nouns use a hyphen (-) between their parts.</p>
+  <div class="grid">
+    <div class="card"><div class="emoji">👩‍👧</div><h3>Mother-in-law</h3></div>
+    <div class="card"><div class="emoji">🥈</div><h3>Runner-up</h3></div>
+    <div class="card"><div class="emoji">🚶</div><h3>Passer-by</h3></div>
+    <div class="card"><div class="emoji">🛎️</div><h3>Check-in</h3></div>
+    <div class="card"><div class="emoji">🎯</div><h3>Self-control</h3></div>
+    <div class="card"><div class="emoji">👨‍👩‍👦</div><h3>Father-in-law</h3></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Compound Nouns in Sentences</h2>
+  <div class="example">1. My little brother ate a chocolate <b class="hl">cupcake</b>.</div>
+  <div class="example">2. I use my <b class="hl">keyboard</b> to type words.</div>
+  <div class="example">3. We made a <b class="hl">snowman</b> in winter.</div>
+  <div class="example">4. The <b class="hl">school bus</b> arrived at eight o'clock.</div>
+  <div class="example">5. Dad put the clothes in the <b class="hl">laundry basket</b>.</div>
+  <p>Compound nouns can be the subject or the object in a sentence.</p>
+</section>
+
+<section class="slide">
+  <h2>🎮 Match the Compound Nouns!</h2>
+  <p style="margin-bottom:10px">Each picture shows the <b>whole compound noun</b>. Drag its missing second part into the box below it. On a phone or tablet, tap a word and then tap its box.</p>
+  <div class="game-wrap">
+    <div class="game-status"><span id="matchProgress">0 / 11 matched</span><span id="matchScore">⭐ 0 points</span></div>
+    <div class="picture-row" id="pictureRow"></div>
+    <div class="slot-row" id="slotRow"></div>
+    <div class="word-bank" id="wordBank"></div>
+    <div class="game-feedback" id="gameFeedback">Find the missing parts!</div>
+    <div class="game-actions"><button onclick="restartGame()">↻ Restart game</button></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Quick Revision</h2>
+  <div class="example"><b class="hl">Compound noun:</b> two or more words working together as one noun.</div>
+  <div class="example"><b class="hl">Closed:</b> keyboard, cupcake, snowman.</div>
+  <div class="example"><b class="hl">Open:</b> living room, school bus, swimming pool.</div>
+  <div class="example"><b class="hl">Hyphenated:</b> mother-in-law, runner-up, passer-by.</div>
+  <p>Can you spot compound nouns in books, signs, and everyday life?</p>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">END OF PRESENTATION</p>
+  <h1>THANK YOU!</h1>
+  <h2>Any Questions?</h2>
+  <div class="example">Keep learning. Keep noticing words. Keep growing! 🚀</div>
+</section>
+
+<div id="counter">1 / 10</div>
+<div class="controls">
+  <button onclick="changeSlide(-1)">← Previous</button>
+  <button onclick="changeSlide(1)">Next →</button>
+</div>
+
+<script>
+let currentSlide=0;
+const slides=document.querySelectorAll(".slide");
+function showSlide(){
+  slides.forEach((s,i)=>s.classList.toggle("active",i===currentSlide));
+  document.getElementById("counter").textContent=`${currentSlide+1} / ${slides.length}`;
+}
+function changeSlide(direction){
+  currentSlide=Math.max(0,Math.min(slides.length-1,currentSlide+direction));
+  showSlide();
+}
+document.addEventListener("keydown",e=>{
+  if(e.key==="ArrowRight")changeSlide(1);
+  if(e.key==="ArrowLeft")changeSlide(-1);
+});
+
+/* The picture represents the complete compound noun.
+   The learner supplies only the second word. */
+const gameItems=[
+  {first:"light",second:"house",whole:"lighthouse",picture:"🗼",color:"#168bd0"},
+  {first:"mail",second:"box",whole:"mailbox",picture:"📫",color:"#df3548"},
+  {first:"key",second:"board",whole:"keyboard",picture:"⌨️",color:"#8a45c7"},
+  {first:"cup",second:"cake",whole:"cupcake",picture:"🧁",color:"#d97706"},
+  {first:"fire",second:"fighter",whole:"firefighter",picture:"🧑‍🚒",color:"#dc4b27"},
+  {first:"basket",second:"ball",whole:"basketball",picture:"🏀",color:"#238b65"},
+  {first:"water",second:"melon",whole:"watermelon",picture:"🍉",color:"#239b65"},
+  {first:"skate",second:"board",whole:"skateboard",picture:"🛹",color:"#7354c8"},
+  {first:"snow",second:"man",whole:"snowman",picture:"☃️",color:"#299bd0"},
+  {first:"book",second:"mark",whole:"bookmark",picture:"🔖",color:"#bd477e"},
+  {first:"hair",second:"cut",whole:"haircut",picture:"💇",color:"#c15b35"}
+];
+let matchedItems=[];
+let selectedPiece=null;
+let gamePoints=0;
+
+function shuffleItems(a){return [...a].sort(()=>Math.random()-0.5)}
+function buildGame(){
+  matchedItems=Array(gameItems.length).fill(false);
+  selectedPiece=null;
+  gamePoints=0;
+  const pictureRow=document.getElementById("pictureRow");
+  const slotRow=document.getElementById("slotRow");
+  const wordBank=document.getElementById("wordBank");
+  pictureRow.innerHTML="";
+  slotRow.innerHTML="";
+  wordBank.innerHTML="";
+
+  gameItems.forEach((item,index)=>{
+    const card=document.createElement("div");
+    card.className="picture-card";
+    card.style.background=item.color;
+    card.innerHTML=`<div class="picture-box">${item.picture}</div><div class="picture-label">${item.first}</div>`;
+    pictureRow.appendChild(card);
+
+    const slot=document.createElement("div");
+    slot.className="answer-slot";
+    slot.dataset.index=index;
+    slot.setAttribute("aria-label",`Missing part for ${item.first}`);
+    slot.addEventListener("dragover",e=>{
+      e.preventDefault();
+      if(!matchedItems[index])slot.classList.add("over");
+    });
+    slot.addEventListener("dragleave",()=>slot.classList.remove("over"));
+    slot.addEventListener("drop",e=>{
+      e.preventDefault();
+      slot.classList.remove("over");
+      placeWord(index,e.dataTransfer.getData("text/plain"));
+    });
+    slot.addEventListener("click",()=>{
+      if(selectedPiece)placeWord(index,selectedPiece);
+    });
+    slotRow.appendChild(slot);
+  });
+
+  const mixedWords=shuffleItems(gameItems.map(x=>x.second));
+  mixedWords.forEach(word=>{
+    const piece=document.createElement("div");
+    piece.className="word-piece";
+    piece.textContent=word;
+    piece.dataset.word=word;
+    piece.draggable=true;
+    piece.addEventListener("dragstart",e=>{
+      e.dataTransfer.setData("text/plain",word);
+    });
+    piece.addEventListener("click",()=>{
+      if(piece.classList.contains("used"))return;
+      document.querySelectorAll(".word-piece").forEach(p=>p.classList.remove("selected"));
+      piece.classList.add("selected");
+      selectedPiece=word;
+      document.getElementById("gameFeedback").textContent=`Selected "${word}". Now tap its matching box.`;
+    });
+    wordBank.appendChild(piece);
+  });
+  updateGameStatus();
+  document.getElementById("gameFeedback").textContent="Find the missing parts!";
+}
+function placeWord(index,word){
+  if(matchedItems[index]||!word)return;
+  const item=gameItems[index];
+  const slot=document.querySelectorAll(".answer-slot")[index];
+  if(word===item.second){
+    matchedItems[index]=true;
+    gamePoints++;
+    slot.textContent=word;
+    slot.classList.add("correct");
+    const piece=[...document.querySelectorAll(".word-piece")].find(p=>p.dataset.word===word&&!p.classList.contains("used"));
+    if(piece)piece.classList.add("used");
+    selectedPiece=null;
+    document.querySelectorAll(".word-piece").forEach(p=>p.classList.remove("selected"));
+    document.getElementById("gameFeedback").textContent=`✓ ${item.whole} — well done!`;
+    updateGameStatus();
+    if(gamePoints===gameItems.length){
+      document.getElementById("gameFeedback").textContent="🏆 Amazing! You matched all 11 compound nouns!";
+    }
+  }else{
+    slot.classList.add("over");
+    document.getElementById("gameFeedback").textContent="Not this one — try another word!";
+    setTimeout(()=>slot.classList.remove("over"),350);
+  }
+}
+function updateGameStatus(){
+  document.getElementById("matchProgress").textContent=`${gamePoints} / ${gameItems.length} matched`;
+  document.getElementById("matchScore").textContent=`⭐ ${gamePoints} points`;
+}
+function restartGame(){
+  buildGame();
+}
+buildGame();
+</script>
+</body>
+</html>
